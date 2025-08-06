@@ -560,7 +560,7 @@ jobs:
           token: ${{ secrets.phpstan-bot-token }}
 
       - name: "Download baselines"
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           pattern: baselines-*
           merge-multiple: true
@@ -568,7 +568,7 @@ jobs:
 
       - name: "Create Pull Request"
         id: create-pr
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.phpstan-bot-token }}
           branch: "create-pull-request/baselines-2.1.x"
